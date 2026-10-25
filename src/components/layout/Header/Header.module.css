@@ -1,0 +1,117 @@
+.header {
+    padding: 30px 0;
+    position: relative;
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+/* burger menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 19px;
+    height: 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 100;
+}
+
+.bar {
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-dark-black);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.burger.active .bar:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+}
+
+.burger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active .bar:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+/* Tablet | Mobile */
+@media screen and (max-width: 1023px) {
+    .iconWrapper {
+        gap: 35px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .menuWrapper {
+        display: contents;
+    }
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .menuWrapper {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-white, #fff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 30px 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        border-top: 1px solid #eee;
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .menuWrapper.active {
+        max-height: 400px; 
+        opacity: 1;
+        pointer-events: auto;
+        transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    }
+
+    .navBar {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0 16px;
+    }
+
+     .navBar>ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+     }
+
+    .iconWrapper {
+        gap: 30px; 
+    }
+}

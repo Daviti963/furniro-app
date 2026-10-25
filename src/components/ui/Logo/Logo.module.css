@@ -1,0 +1,26 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo>h4 {
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-bold);
+    font-family: var(--font-secondary);
+    color: var(--color-dark-black);
+}
+
+/* Tablet | Mobile */
+
+@media screen and (max-width: 1023px) {
+
+    .logo img {
+        width: 40px;
+
+    }
+
+    .logo>h4 {
+        font-size: var(--fs-h6);
+    }
+}
