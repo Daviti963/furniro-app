@@ -1,0 +1,14 @@
+.navbarGrid {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+}
+
+
+@media screen and (max-width: 1023px) {
+    .navbarGrid {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+}

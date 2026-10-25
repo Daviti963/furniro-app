@@ -1,0 +1,18 @@
+.li {
+    list-style: none;
+    transition: all 0.2s ease;
+}
+
+.li a {
+    text-decoration: none;
+    color: var(--color-dark-black);
+    font-weight: var(--fw-medium);
+}
+
+li.active>a {
+    color: var(--color-primary);
+}
+
+.li:not(.active):hover {
+    opacity: 0.7;
+}
