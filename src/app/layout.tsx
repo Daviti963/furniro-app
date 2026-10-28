@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
 import Header from "../components/layout/Header/Header";
+import Footer from "../components/layout/Footer/Footer";
 import "./globals.css";
 
 // მთავარი შრიფტი - Poppins
@@ -33,7 +34,8 @@ export default function RootLayout({
     <html lang="ka" className={`${poppins.variable} ${montserrat.variable}`}>
       <body>
         <Header />
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
