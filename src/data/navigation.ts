@@ -6,3 +6,10 @@ export const navSection: Navitem[] = [
     { name: 'About', href: '/About' },
     { name: 'Contact', href: '/Contact' }
 ];
+
+
+export const helpSection: Navitem[] = [
+    { name: 'Payment Options', href: '/payment' },
+    { name: 'Returns', href: '/returns' },
+    { name: 'Privacy Policies', href: '/privacy' }
+];

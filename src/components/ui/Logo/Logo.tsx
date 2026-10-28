@@ -1,8 +1,13 @@
 import Image from "next/image";
 import styles from './Logo.module.css';
-export default function Logo() {
+
+interface LogoProp {
+    className?: string;
+}
+
+export default function Logo({className}: LogoProp) {
     return (
-        <div className={styles.logo}>
+        <div className={`${styles.logo} ${className}`}>
             <Image
                 src='/images/main-logo.svg'
                 alt="Company logo"

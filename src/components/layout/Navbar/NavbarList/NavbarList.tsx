@@ -1,5 +1,4 @@
 'use client'
-
 import styles from './NavbarList.module.css';
 import Link from "next/link";
 import { Navitem } from '@/src/type/navigation';

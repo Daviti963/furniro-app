@@ -45,6 +45,7 @@
     --fs-h5: 32px;
     --fs-h6: 28px;
 
+    --fs-text-14: 14px;
     --fs-text-16: 16px;
     --fs-text-18: 18px;
     --fs-text-20: 20px;
@@ -91,10 +92,16 @@ body {
 
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: var(--font-main);
     font-weight: var(--fw-regular);
     background-color: var(--bg-light);
     min-height: 100dvh;
+}
+
+main {
+    flex: 1;
 }
 
 /* Container */

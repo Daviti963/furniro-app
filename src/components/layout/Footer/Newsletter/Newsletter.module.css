@@ -1,0 +1,60 @@
+.newsLetter {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.title {
+    color: #9F9F9F;
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-text-16);
+}
+
+/* from */
+
+.form {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.input {
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    padding-bottom: 3px;
+    font-family: var(--font-main);
+    outline: none;
+
+}
+
+.input::placeholder {
+    font-size: var(--fs-text-14);
+    font-family: var(--font-main);
+    color: #9F9F9F;
+}
+
+.button {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: var(--fs-text-14);
+    color: var(--color-dark-black);
+    font-family: var(--font-main);
+    font-weight: var(--fw-medium);
+    padding: 0 0 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+@media screen and (max-width: 360px) {
+    .form {
+        flex-direction: column;
+    }
+
+    .button {
+        align-self: flex-start;
+    }
+}
