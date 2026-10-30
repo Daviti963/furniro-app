@@ -1,0 +1,32 @@
+.list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    color: var(--color-dark-black);
+}
+
+/* გამყოფი: ყველა li-ს წინ, პირველის გარდა */
+.item+.item::before {
+    content: '>';
+    margin: 0 6px;
+    font-weight: var(--fw-medium);
+}
+
+.item a {
+    color: var(--color-dark-black);
+    font-weight: var(--fw-medium);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.item a:hover {
+    color: #b88e2f;
+}
