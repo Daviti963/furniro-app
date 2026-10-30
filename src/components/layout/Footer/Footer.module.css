@@ -51,7 +51,6 @@
     border-top: 1px solid rgba(0, 0, 0, 0.17);
 }
 
-
 /* Mobile */
 
 @media screen and (max-width: 1000px) {
@@ -62,6 +61,15 @@
 }
 
 @media screen and (max-width: 550px) {
+
+    .footerLogoContent {
+        text-align: center;
+    }
+
+    .logoContent {
+        align-self: center;
+    }
+
     .footerLinks {
         display: flex;
         flex-direction: column;
