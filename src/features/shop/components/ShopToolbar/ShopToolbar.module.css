@@ -1,0 +1,11 @@
+.shopToolbar {
+    background: #F9F1E7;
+    padding: 23px 0;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
