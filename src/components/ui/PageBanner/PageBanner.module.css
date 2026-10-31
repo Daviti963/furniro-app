@@ -1,5 +1,6 @@
 .banner {
-    background-image: url('/images/Pagebanner.png');
+    position: relative;
+    background-image: url('/images/original-pagebannerBG.jpg');
     background-size: cover;
     background-position: center;
     min-height: 316px;
@@ -8,6 +9,19 @@
     align-items: center;
     justify-content: center;
     gap: 4px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    url('/images/original-pagebannerBG.jpg') center / cover no-repeat;
+  filter: blur(3px);
+  z-index: -1;
 }
 
 .title {

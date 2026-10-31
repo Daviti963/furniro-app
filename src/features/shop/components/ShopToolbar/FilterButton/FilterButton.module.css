@@ -1,0 +1,12 @@
+.filterButton {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background-color: transparent;
+}
+
+.filterButton>span {
+    font-size: var(--fs-text-20);
+    font-family: var(--font-main);
+}
