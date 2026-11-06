@@ -2,6 +2,8 @@
     /* Background */
 
     --bg-light: #FFF;
+    --bg-light-secondary: #F4F5F7;
+    --bg-red-accent: #E97171;
 
     /* Colors */
 
@@ -25,6 +27,11 @@
     /* Color White */
 
     --color-white: #FFF;
+
+    /* Accent Colors */
+
+    --color-green-accent: #2EC1AC;
+    --bg-card: #F4F5F7;
 
 
     /* Font Weights */

@@ -1,0 +1,15 @@
+.productGrid {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+}
+
+.productGrid>li {
+    list-style: none;
+    background-color: var(--bg-light-secondary);
+    width: 285px;
+    height: 466px;
+
+}
