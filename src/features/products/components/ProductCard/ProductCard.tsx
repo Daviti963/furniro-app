@@ -3,6 +3,7 @@ import type { Product } from '../../types/types';
 import Image from 'next/image';
 import { getDiscountedPrice } from '../../utils/getDiscountedPrice';
 import { formatPrice } from '@/src/utils/formatPrice';
+import ProductCardOverlay from './ProductCardOverlay/ProductCardOverlay';
 
 const MIN_VISIBLE_DISCOUNT = 9;
 
@@ -42,6 +43,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 </div>
             </div>
             {hasDiscount && <span>-{Math.round(product.discountPercentage)}%</span>}
+            <ProductCardOverlay />
         </article>
     )
 }

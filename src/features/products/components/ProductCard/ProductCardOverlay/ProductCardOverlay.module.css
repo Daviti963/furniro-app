@@ -1,0 +1,27 @@
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    background-color: rgba(58, 58, 58, 0.72);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.addToCart {
+    display: flex;
+
+    background-color: var(--bg-light);
+    padding: 12px 52px;
+    font-family: var(--font-main);
+    color: var(--color-primary);
+    font-size: var(--fs-text-16);
+    font-weight: var(--fw-semibold);
+    line-height: 150%;
+
+}
