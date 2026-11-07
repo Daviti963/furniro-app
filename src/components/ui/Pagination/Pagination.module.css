@@ -1,0 +1,25 @@
+.pagination {
+    display: flex;
+    align-self: center;
+    gap: 38px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    color: var(--color-dart-black);
+    font-size: var(--fs-text-18);
+    background-color: var(--color-secondary);
+
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.item.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
