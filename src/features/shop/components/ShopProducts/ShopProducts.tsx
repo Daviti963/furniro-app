@@ -9,7 +9,7 @@ import type { SearchParams } from '@/src/type/searchParms';
 
 type ShopProductsProps = {
     searchParams: SearchParams;
-}
+};
 
 export default async function ShopProducts({ searchParams }: ShopProductsProps) {
     const { page } = await searchParams;
@@ -26,5 +26,5 @@ export default async function ShopProducts({ searchParams }: ShopProductsProps) 
             <ProductGrid products={visibleProducts} />
             <Pagination currentPage={currentPage} totalPages={totalPages} />
         </>
-    )
+    );
 }

@@ -8,7 +8,7 @@ import type { SearchParams } from '@/src/type/searchParms';
 
 type ShopProps = {
     searchParams: SearchParams;
-}
+};
 
 export default function Shop({ searchParams }: ShopProps) {
     return (
@@ -23,5 +23,5 @@ export default function Shop({ searchParams }: ShopProps) {
                 </div>
             </Container>
         </main>
-    )
+    );
 }

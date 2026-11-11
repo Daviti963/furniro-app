@@ -11,7 +11,7 @@
     text-decoration: none;
 
     color: var(--color-dart-black);
-    font-size: var(--fs-text-18);
+    font-size: var(--fs-text-16);
     background-color: var(--color-secondary);
 
     width: 60px;
@@ -22,4 +22,8 @@
 .item.active {
     background-color: var(--color-primary);
     color: var(--color-white);
+}
+
+.next {
+    width: 96px;
 }

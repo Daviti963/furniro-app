@@ -4,7 +4,7 @@ import styles from './Pagination.module.css';
 type PaginationProps = {
     currentPage: number;
     totalPages: number;
-}
+};
 
 export default function Pagination({ currentPage, totalPages }: PaginationProps) {
 
@@ -33,5 +33,5 @@ export default function Pagination({ currentPage, totalPages }: PaginationProps)
                 </Link>
             )}
         </nav>
-    )
+    );
 }
