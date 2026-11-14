@@ -1,8 +1,6 @@
 import { Suspense } from 'react';
 import styles from './page.module.css';
 import PageBanner from '@/src/components/ui/PageBanner/PageBanner';
-import ShopToolbar from '@/src/features/shop/components/ShopToolbar/ShopToolbar';
-import Container from '@/src/components/ui/Container/Container';
 import ShopProducts from '@/src/features/shop/components/ShopProducts/ShopProducts';
 import type { SearchParams } from '@/src/type/searchParms';
 
@@ -14,14 +12,11 @@ export default function Shop({ searchParams }: ShopProps) {
     return (
         <main className={styles.shopPage}>
             <PageBanner title="Shop" />
-            <ShopToolbar />
-            <Container>
                 <div className={styles.shopPageProducts}>
                     <Suspense fallback={<p>Loading...</p>}>
                         <ShopProducts searchParams={searchParams} />
                     </Suspense>
                 </div>
-            </Container>
         </main>
     );
 }

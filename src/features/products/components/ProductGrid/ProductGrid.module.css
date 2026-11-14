@@ -1,14 +1,32 @@
 .productGrid {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 32px;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 
-.productGrid>li {
-    list-style: none;
-    background-color: var(--bg-light-secondary);
-    width: 285px;
-    height: 466px;
+.productGrid > li {
+  list-style: none;
+  background-color: var(--bg-light-secondary);
+  width: calc((100% - 3 * 32px) / 4);
+  max-height: 466px;
+  height: 100%;
+}
+
+@media screen and (max-width: 1032px) {
+  .productGrid > li {
+    width: calc((100% - 2 * 32px) / 3);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .productGrid > li {
+    width: calc((100% - 32px) / 2);
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .productGrid > li {
+    width: calc((100%));
+  }
 }
