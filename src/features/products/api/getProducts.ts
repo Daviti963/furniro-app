@@ -1,5 +1,5 @@
 import { api } from "@/src/lib/axios";
-import type { Product, ProductsResponse } from "../types/types";
+import type { Product, ProductsResponse } from "../types/product";
 
 export async function getProductsByCategory(category: string): Promise<Product[]> {
     'use cache'

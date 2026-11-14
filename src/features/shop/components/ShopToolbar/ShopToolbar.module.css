@@ -1,11 +1,17 @@
 .shopToolbar {
-    background: #F9F1E7;
-    padding: 23px 0;
-    width: 100%;
+  background: #f9f1e7;
+  padding: 23px 0;
+  width: 100%;
+}
+
+.shopToolbarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .buttons {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
