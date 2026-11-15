@@ -1,0 +1,27 @@
+.sortSelect {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.sortSelect label {
+  color: var(--color-dark-black);
+}
+
+.sortSelect select {
+  padding: 12px 30px;
+  font-family: var(--font-main);
+  font-size: var(--fs-text-16);
+  color: var(--color-gray-5);
+  cursor: pointer;
+  border: none;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.sortSelect select:focus {
+  outline: none;
+  border: none;
+}
