@@ -1,0 +1,5 @@
+.resultCount {
+    color: var(--color-dark-black);
+    border-left: 2px solid var(--color-gray-5);    
+    padding-left: 34px;
+}

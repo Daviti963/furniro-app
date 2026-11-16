@@ -26,17 +26,21 @@ export default async function ShopProducts({
   const currentSort = parseSort(sort);
 
   const products = await getProductsByCategory("furniture");
-  const allProducts = repeatProducts(products, PRODUCTS_TOTAL);
-  const totalPages = Math.ceil(allProducts.length / PRODUCTS_PER_PAGE);
+  const repeatProduct = repeatProducts(products, PRODUCTS_TOTAL);
+  const totalPages = Math.ceil(repeatProduct.length / PRODUCTS_PER_PAGE);
   const currentPage = parsePage(page, totalPages);
-  const visibleProducts = paginate(allProducts, currentPage, PRODUCTS_PER_PAGE);
-  const sortedProducts = sortProducts(visibleProducts, currentSort);
+  const sortedProducts = sortProducts(repeatProduct, currentSort);
+  const { items, from, to, total } = paginate(
+    sortedProducts,
+    currentPage,
+    PRODUCTS_PER_PAGE,
+  );
   return (
     <>
-      <ShopToolbar sortValue={currentSort} />
+      <ShopToolbar sortValue={currentSort} resultCount={{ from, to, total }} />
       <Container>
         <div className={styles.productWrapper}>
-          <ProductGrid products={sortedProducts} />
+          <ProductGrid products={items} />
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
