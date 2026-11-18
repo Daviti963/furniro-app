@@ -1,0 +1,7 @@
+.showSelect {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 55px;
+    height: 55px;
+}

@@ -1,5 +1,12 @@
 .resultCount {
-    color: var(--color-dark-black);
-    border-left: 2px solid var(--color-gray-5);    
-    padding-left: 34px;
+  color: var(--color-dark-black);
+  border-left: 2px solid var(--color-gray-5);
+  padding-left: 34px;
+}
+
+@media screen and (max-width: 468px) {
+  .resultCount {
+    border-left: none;
+    padding-left: 0;
+  }
 }

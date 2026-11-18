@@ -3,18 +3,16 @@ import ProductGrid from "@/src/features/products/components/ProductGrid/ProductG
 import Pagination from "@/src/components/ui/Pagination/Pagination";
 import { getProductsByCategory } from "@/src/features/products/api/getProducts";
 import { repeatProducts } from "@/src/features/products/utils/repeatProducts";
-import {
-  PRODUCTS_PER_PAGE,
-  PRODUCTS_TOTAL,
-} from "@/src/features/products/constants/constants";
+import { PRODUCTS_TOTAL } from "@/src/features/products/constants/constants";
 import { paginate } from "@/src/utils/paginate";
 import { parsePage } from "@/src/utils/parsePage";
 import type { SearchParams } from "@/src/type/searchParms";
 import { sortProducts } from "@/src/features/products/utils/sortProducts";
 import { parseSort } from "@/src/features/products/utils/parseSort";
-
 import Container from "@/src/components/ui/Container/Container";
 import ShopToolbar from "../ShopToolbar/ShopToolbar";
+import { parseShow } from "../../utils/parseShow";
+
 type ShopProductsProps = {
   searchParams: SearchParams;
 };
@@ -22,22 +20,26 @@ type ShopProductsProps = {
 export default async function ShopProducts({
   searchParams,
 }: ShopProductsProps) {
-  const { page, sort } = await searchParams;
+  const { page, sort, show } = await searchParams;
   const currentSort = parseSort(sort);
-
+  const currentShow = parseShow(show);
   const products = await getProductsByCategory("furniture");
   const repeatProduct = repeatProducts(products, PRODUCTS_TOTAL);
-  const totalPages = Math.ceil(repeatProduct.length / PRODUCTS_PER_PAGE);
+  const totalPages = Math.ceil(repeatProduct.length / currentShow);
   const currentPage = parsePage(page, totalPages);
   const sortedProducts = sortProducts(repeatProduct, currentSort);
   const { items, from, to, total } = paginate(
     sortedProducts,
     currentPage,
-    PRODUCTS_PER_PAGE,
+    currentShow,
   );
   return (
     <>
-      <ShopToolbar sortValue={currentSort} resultCount={{ from, to, total }} />
+      <ShopToolbar
+        sortValue={currentSort}
+        resultCount={{ from, to, total }}
+        showValue={currentShow}
+      />
       <Container>
         <div className={styles.productWrapper}>
           <ProductGrid products={items} />
@@ -45,7 +47,7 @@ export default async function ShopProducts({
             currentPage={currentPage}
             totalPages={totalPages}
             basePath="/shop"
-            query={{ sort: currentSort }}
+            query={{ sort: currentSort, show: String(currentShow) }}
           />
         </div>
       </Container>
