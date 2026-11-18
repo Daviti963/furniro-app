@@ -15,3 +15,36 @@
   align-items: center;
   gap: 30px;
 }
+
+.select {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Mobiles | Tablets */
+
+@media screen and (max-width: 900px) {
+  .shopToolbarWrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .select {
+    order: -1;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 328px) {
+  .select {
+    flex-direction: column;
+  }
+}

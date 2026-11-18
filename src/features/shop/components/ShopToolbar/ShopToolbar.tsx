@@ -4,16 +4,19 @@ import FilterButton from "./FilterButton/FilterButton";
 import Container from "@/src/components/ui/Container/Container";
 import ViewToggle from "./ViewToggle/ViewToggle";
 import SortSelect from "./SortSelect/SortSelect";
+import ShowSelect from "./ShowSelect/ShowSelect";
 import ResultCount, { type ResultCountProps } from "./ResultCount/ResultCount";
 
 type ShopToolbarProps = {
   sortValue: SortOption;
   resultCount: ResultCountProps;
+  showValue: number;
 };
 
 export default function ShopToolbar({
   sortValue,
   resultCount,
+  showValue,
 }: ShopToolbarProps) {
   return (
     <section className={styles.shopToolbar}>
@@ -25,7 +28,8 @@ export default function ShopToolbar({
             <ResultCount {...resultCount} />
           </div>
 
-          <div>
+          <div className={styles.select}>
+            <ShowSelect value={showValue} />
             <SortSelect value={sortValue} />
           </div>
         </div>

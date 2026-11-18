@@ -7,6 +7,6 @@
 }
 
 .filterButton>span {
-    font-size: var(--fs-text-20);
+    font-size: var(--fs-text-16);
     font-family: var(--font-main);
 }

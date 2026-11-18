@@ -9,8 +9,7 @@
   list-style: none;
   background-color: var(--bg-light-secondary);
   width: calc((100% - 3 * 32px) / 4);
-  max-height: 466px;
-  height: 100%;
+  height: 466px;
 }
 
 @media screen and (max-width: 1032px) {
