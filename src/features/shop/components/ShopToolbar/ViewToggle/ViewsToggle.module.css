@@ -1,5 +1,9 @@
 .viewToggle {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.button.active svg path {
+  fill: var(--color-primary);
 }
