@@ -6,23 +6,20 @@ import { repeatProducts } from "@/src/features/products/utils/repeatProducts";
 import { PRODUCTS_TOTAL } from "@/src/features/products/constants/constants";
 import { paginate } from "@/src/utils/paginate";
 import { parsePage } from "@/src/utils/parsePage";
-import type { SearchParams } from "@/src/type/searchParms";
 import { sortProducts } from "@/src/features/products/utils/sortProducts";
 import { parseSort } from "@/src/features/products/utils/parseSort";
 import Container from "@/src/components/ui/Container/Container";
 import ShopToolbar from "../ShopToolbar/ShopToolbar";
 import { parseShow } from "../../utils/parseShow";
-
-type ShopProductsProps = {
-  searchParams: SearchParams;
-};
+import { parseView } from "@/src/features/products/utils/parseView";
 
 export default async function ShopProducts({
   searchParams,
-}: ShopProductsProps) {
-  const { page, sort, show } = await searchParams;
+}: PageProps<"/shop">) {
+  const { page, sort, show, view } = await searchParams;
   const currentSort = parseSort(sort);
   const currentShow = parseShow(show);
+  const currentView = parseView(view);
   const products = await getProductsByCategory("furniture");
   const repeatProduct = repeatProducts(products, PRODUCTS_TOTAL);
   const totalPages = Math.ceil(repeatProduct.length / currentShow);
@@ -33,21 +30,27 @@ export default async function ShopProducts({
     currentPage,
     currentShow,
   );
+  const query = {
+    sort: currentSort,
+    show: String(currentShow),
+    view: currentView,
+  };
   return (
     <>
       <ShopToolbar
         sortValue={currentSort}
         resultCount={{ from, to, total }}
         showValue={currentShow}
+        viewValue={currentView}
       />
       <Container>
         <div className={styles.productWrapper}>
-          <ProductGrid products={items} />
+          <ProductGrid products={items} viewToggle={currentView} />
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
             basePath="/shop"
-            query={{ sort: currentSort, show: String(currentShow) }}
+            query={query}
           />
         </div>
       </Container>

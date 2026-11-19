@@ -17,3 +17,5 @@ export type ProductsResponse = {
 };
 
 export type SortOption = "default" | "price-asc" | "price-desc";
+
+export type ProductView = "grid" | "list";
