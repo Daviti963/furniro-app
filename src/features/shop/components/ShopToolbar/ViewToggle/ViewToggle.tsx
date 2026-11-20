@@ -10,12 +10,16 @@ type ViewToggleProps = {
 export default function ViewToggle({ viewValue }: ViewToggleProps) {
   const updateSearchParam = useUpdateSearchParam();
   return (
-    <div className={styles.viewToggle}>
+    <div className={styles.viewToggle} role="group" aria-label="Product view">
       <button
+        type="button"
+        aria-label="Grid view"
+        aria-pressed={viewValue === "grid"}
         className={`${styles.button} ${viewValue === "grid" ? styles.active : ""}`}
         onClick={() => updateSearchParam("view", "grid", false)}
       >
         <svg
+          aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="17"
           height="17"
@@ -30,10 +34,14 @@ export default function ViewToggle({ viewValue }: ViewToggleProps) {
       </button>
 
       <button
+        type="button"
+        aria-label="List view"
+        aria-pressed={viewValue === "list"}
         className={`${styles.button} ${viewValue === "list" ? styles.active : ""}`}
         onClick={() => updateSearchParam("view", "list", false)}
       >
         <svg
+          aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="21"
           height="20"
