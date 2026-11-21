@@ -12,10 +12,10 @@ import Container from "@/src/components/ui/Container/Container";
 import ShopToolbar from "../ShopToolbar/ShopToolbar";
 import { parseShow } from "../../utils/parseShow";
 import { parseView } from "@/src/features/products/utils/parseView";
-
+type ShopProductsProps = Pick<PageProps<"/shop">, "searchParams">;
 export default async function ShopProducts({
   searchParams,
-}: PageProps<"/shop">) {
+}: ShopProductsProps) {
   const { page, sort, show, view } = await searchParams;
   const currentSort = parseSort(sort);
   const currentShow = parseShow(show);
