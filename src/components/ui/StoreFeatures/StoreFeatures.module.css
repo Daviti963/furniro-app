@@ -19,7 +19,7 @@
 .storeFeatures ul li h3 {
   color: var(--color-dark-black);
   font-weight: var(--fw-semibold);
-  font-size: var(--fs-text-20);
+  font-size: var(--fs-text-18);
 }
 
 .storeFeatures ul li p {
@@ -33,16 +33,6 @@
   .storeFeatures ul li {
     flex-direction: column;
     align-items: normal;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .storeFeatures ul li img {
-    width: 50px;
-    height: 50px;
-  }
-   .storeFeatures ul li h3 {
-    font-size: var(--fs-text-18);
   }
 }
 
@@ -70,7 +60,7 @@
 @media screen and (max-width: 368px) {
   .storeFeatures ul li {
     flex-direction: column;
-    align-items: normal;
+    text-align: center;
   }
 
   .storeFeatures ul li img {

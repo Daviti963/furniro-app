@@ -7,7 +7,7 @@ export default function StoreFeatures() {
       <ul>
         {FEATURES.map((item) => (
           <li key={item.id}>
-            <Image src={item.iconSrc} width={60} height={60} alt={item.title}/>
+            <Image src={item.iconSrc} width={50} height={50} alt={item.title} />
             <div>
               <h3>{item.title}</h3>
               <p>{item.subtitle}</p>
