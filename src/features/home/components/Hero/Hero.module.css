@@ -1,5 +1,5 @@
 .hero {
-  background-image: url("/images/Hero.png");
+  background-image: url("/images/Hero.svg");
   background-size: cover;
   background-position: center;
   min-height: 716px;
@@ -111,6 +111,7 @@
   }
 
   .card a {
+    font-size: var(--fs-text-14);
     padding: 8px 42px;
     font-weight: var(--fw-regular);
   }
