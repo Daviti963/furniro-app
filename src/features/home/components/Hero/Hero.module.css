@@ -1,0 +1,117 @@
+.hero {
+  background-image: url("/images/Hero.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 716px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  max-width: 643px;
+  width: 100%;
+  background: #fff3e3;
+  border-radius: 10px;
+
+  padding: 62px 56px 37px 42px;
+}
+
+.card span {
+  color: var(--color-font-color);
+  font-weight: var(--fw-semibold);
+}
+
+.card h1 {
+  font-size: var(--fs-display-1);
+  color: var(--color-primary);
+  font-weight: var(--fw-bold);
+  margin: 4px 0 15px;
+  text-wrap: balance;
+}
+
+.card p {
+  color: var(--color-font-color);
+  font-size: var(--fs-text-18);
+  font-weight: var(--fw-medium);
+  margin-bottom: 46px;
+}
+
+.card a {
+  text-decoration: none;
+  color: var(--color-white);
+  font-weight: var(--fw-bold);
+  padding: 25px 72px;
+  background-color: var(--color-primary);
+  align-self: flex-start;
+  transition: all 0.2s;
+}
+
+.card a:hover {
+  opacity: 0.7;
+}
+
+.card a:active {
+  opacity: 1;
+}
+
+/* mobile | Tablet */
+
+@media screen and (max-width: 768px) {
+  .card {
+    justify-self: center;
+  }
+
+  .card h1 {
+    font-size: var(--fs-h1);
+  }
+
+  .card a {
+    padding: 20px 62px;
+    font-weight: var(--fw-semibold);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    text-align: center;
+    padding: 52px 46px 37px 32px;
+  }
+
+  .card a {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  .card h1 {
+    font-size: var(--fs-text-24);
+    font-weight: var(--fw-semibold);
+  }
+
+  .card p {
+    font-size: var(--fs-text-16);
+  }
+
+  .card a {
+    font-size: var(--fs-text-16);
+    padding: 15px 52px;
+    font-weight: var(--fw-medium);
+  }
+}
+
+@media screen and (max-width: 343px) {
+  .card {
+    text-align: center;
+    padding: 42px 22px 27px 22px;
+  }
+
+  .card a {
+    padding: 8px 42px;
+    font-weight: var(--fw-regular);
+  }
+}
