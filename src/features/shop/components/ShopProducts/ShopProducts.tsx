@@ -12,29 +12,37 @@ import Container from "@/src/components/ui/Container/Container";
 import ShopToolbar from "../ShopToolbar/ShopToolbar";
 import { parseShow } from "../../utils/parseShow";
 import { parseView } from "@/src/features/products/utils/parseView";
+import { parseSearch } from "@/src/features/products/utils/parseSearch";
+import { searchProducts } from "@/src/features/products/utils/searchProducts";
 type ShopProductsProps = Pick<PageProps<"/shop">, "searchParams">;
 export default async function ShopProducts({
   searchParams,
 }: ShopProductsProps) {
-  const { page, sort, show, view } = await searchParams;
+  const { page, sort, show, view, q } = await searchParams;
   const currentSort = parseSort(sort);
   const currentShow = parseShow(show);
   const currentView = parseView(view);
+  const currentSearch = parseSearch(q);
+
   const products = await getProductsByCategory("furniture");
   const repeatProduct = repeatProducts(products, PRODUCTS_TOTAL);
-  const totalPages = Math.ceil(repeatProduct.length / currentShow);
+  const filterProducts = searchProducts(repeatProduct, currentSearch);
+  const sortedProducts = sortProducts(filterProducts, currentSort);
+  const totalPages = Math.ceil(sortedProducts.length / currentShow);
   const currentPage = parsePage(page, totalPages);
-  const sortedProducts = sortProducts(repeatProduct, currentSort);
   const { items, from, to, total } = paginate(
     sortedProducts,
     currentPage,
     currentShow,
   );
+
   const query = {
     sort: currentSort,
     show: String(currentShow),
     view: currentView,
+    q: currentSearch,
   };
+
   return (
     <>
       <ShopToolbar
@@ -42,6 +50,7 @@ export default async function ShopProducts({
         resultCount={{ from, to, total }}
         showValue={currentShow}
         viewValue={currentView}
+        qValue={currentSearch}
       />
       <Container>
         <div className={styles.productWrapper}>

@@ -5,6 +5,12 @@
   gap: 32px;
 }
 
+.noProduct {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 .productGrid > li {
   list-style: none;
   background-color: var(--bg-light-secondary);

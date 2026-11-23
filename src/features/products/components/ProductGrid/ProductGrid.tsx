@@ -11,6 +11,7 @@ export default function ProductGrid({
   products,
   viewToggle = "grid",
 }: ProductGridProps) {
+  if (products.length === 0) return <p className={styles.noProduct}>No product found</p>;
   return (
     <ul
       className={`${styles.productGrid} ${viewToggle === "list" ? styles.list : ""} `}

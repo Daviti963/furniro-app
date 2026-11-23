@@ -3,7 +3,7 @@ import type {
   SortOption,
   ProductView,
 } from "@/src/features/products/types/product";
-import FilterButton from "./FilterButton/FilterButton";
+import SearchFilter from "./SearchFilter/SearchFilter";
 import Container from "@/src/components/ui/Container/Container";
 import ViewToggle from "./ViewToggle/ViewToggle";
 import SortSelect from "./SortSelect/SortSelect";
@@ -15,6 +15,7 @@ type ShopToolbarProps = {
   resultCount: ResultCountProps;
   showValue: number;
   viewValue: ProductView;
+  qValue: string;
 };
 
 export default function ShopToolbar({
@@ -22,13 +23,14 @@ export default function ShopToolbar({
   resultCount,
   showValue,
   viewValue,
+  qValue,
 }: ShopToolbarProps) {
   return (
     <section className={styles.shopToolbar}>
       <Container>
         <div className={styles.shopToolbarWrapper}>
           <div className={styles.buttons}>
-            <FilterButton />
+            <SearchFilter value={qValue} />
             <ViewToggle viewValue={viewValue} />
             <ResultCount {...resultCount} />
           </div>

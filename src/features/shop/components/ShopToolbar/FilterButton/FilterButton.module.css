@@ -1,12 +1,21 @@
 .filterButton {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-    background-color: transparent;
+  background-color: transparent;
 }
 
-.filterButton>span {
-    font-size: var(--fs-text-16);
-    font-family: var(--font-main);
+.filterButton svg path {
+  stroke: var(--color-dark-black);
+  transition: stroke 0.2s ease;
+}
+
+.filterButton.active svg path {
+  stroke: var(--color-primary);
+}
+
+.filterButton > span {
+  font-size: var(--fs-text-16);
+  font-family: var(--font-main);
 }

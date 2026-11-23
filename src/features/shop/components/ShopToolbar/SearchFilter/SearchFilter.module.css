@@ -1,0 +1,44 @@
+.searchFilter {
+  position: relative;
+}
+
+.panel {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 0;
+  z-index: 10;
+
+  padding: 20px 24px;
+  background-color: var(--color-secondary);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s;
+}
+
+.panel.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 468px) {
+  .panel {
+    padding: 10px 14px;
+  }
+}
+
+@media screen and (max-width: 429px) {
+   .searchFilter {
+    position: static;
+  }
+
+  .panel {
+    top: auto;
+    left: 16px;
+    right: 16px;
+    margin-top: 16px;
+  }
+}
