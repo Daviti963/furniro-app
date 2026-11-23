@@ -12,7 +12,7 @@ export default function Pagination({
   currentPage,
   totalPages,
   basePath,
-  query,
+  query = {},
 }: PaginationProps) {
   if (totalPages <= 1) return null;
 
