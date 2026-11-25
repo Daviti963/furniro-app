@@ -1,0 +1,40 @@
+.productSection {
+  margin-top: 56px;
+}
+
+.productSection h2 {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.links {
+  margin-top: 32px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-self: center;
+}
+
+.links a {
+  padding: 12px 82px;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: var(--fw-semibold);
+  border: 1px solid var(--color-primary);
+  transition: all 0.2s;
+}
+
+.links a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* mobile */
+
+@media screen and (max-width: 368px) {
+  .links a {
+    padding: 10px 52px;
+  }
+}

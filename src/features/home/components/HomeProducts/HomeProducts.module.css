@@ -1,0 +1,17 @@
+.homeProductSection h2 {
+  color: var(--color-gray-1);
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-bold);
+}
+
+@media screen and (max-width: 768px) {
+  .homeProductSection h2 {
+    font-size: var(--fs-h6);
+  }
+}
+
+@media screen and (max-width: 478px) {
+  .homeProductSection h2 {
+    font-size: var(--fs-text-24);
+  }
+}
