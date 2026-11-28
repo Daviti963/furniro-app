@@ -5,6 +5,7 @@
   --bg-light-secondary: #f4f5f7;
   --bg-red-accent: #e97171;
   --bg-light-gold: #faf3ea;
+  --bg-light-gold-2: #fcf8f3;
 
   /* Colors */
 
@@ -95,6 +96,14 @@ button {
 html,
 body {
   height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
 }
 
 body {
